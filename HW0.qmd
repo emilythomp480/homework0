@@ -1,0 +1,45 @@
+---
+title: "BST 260 HW 0"
+author: "Emily Thompson"
+format: html
+editor: visual
+execute: 
+    echo: false
+---
+
+## Exercises
+
+(@) *Write a Quarto document that defines variables $a=1, b=3, c=2$
+and print out the solutions to $f(x) = ax^2+bx+c=0$. Do not report complex solutions, only real numbers.* 
+
+```{r}
+a <- 1
+b <- 3
+c <- 2
+
+#set solutions equal to NA if complex
+x1 <- ifelse((b^2-4*a*c)<0, NA, (-b+sqrt(b^2-4*a*c))/2*a)
+x2 <- ifelse((b^2-4*a*c)<0, NA, (-b-sqrt(b^2-4*a*c))/2*a)
+
+print.solutions <- function(x1, x2){
+  if (!is.na(x1) & !is.na(x2)){print(paste0("The solutions are " , x1 , " and " , x2, "."))} 
+  else if (!is.na(x1)){print(paste0("The solution is ", x1, "."))}
+  else if (!is.na(x2)){print(paste0("The solution is ", x2, "."))}
+  else{print("There are no real solutions.")}
+}
+
+print.solutions(x1, x2)
+
+```
+These solutions to $f(x) = ax^2+bx+c=0$ are based on input values of $a=`r a`, b=`r b`$, and $c=`r c`$.
+
+(@) *Include a graph of $f(x)$ versus $x$ for $x \in (-5,5)$.*
+```{r}
+x<- seq(-5, 5, length=300)
+plot(x, a*x^2 + b*x+c, type="l")
+abline(h=0, lty=2)
+```
+The graph displays the solution(s) to the equation (if any) as the point(s) where the curve crosses the line at $y=0$.
+
+
+
