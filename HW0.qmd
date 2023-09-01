@@ -23,8 +23,7 @@ x2 <- ifelse((b^2-4*a*c)<0, NA, (-b-sqrt(b^2-4*a*c))/2*a)
 
 print.solutions <- function(x1, x2){
   if (!is.na(x1) & !is.na(x2)){print(paste0("The solutions are " , x1 , " and " , x2, "."))} 
-  else if (!is.na(x1)){print(paste0("The solution is ", x1, "."))}
-  else if (!is.na(x2)){print(paste0("The solution is ", x2, "."))}
+  else if (x1==x2){print(paste0("The solution is ", x1, "."))}
   else{print("There are no real solutions.")}
 }
 
