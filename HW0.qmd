@@ -1,5 +1,5 @@
 ---
-title: "BST 260 HW 0"
+title: "BST 260 HW 0 "
 author: "Emily Thompson"
 format: html
 editor: visual
